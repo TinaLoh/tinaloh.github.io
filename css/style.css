@@ -3,3 +3,7 @@
     margin: 20px;
     background-color: #FFCCFF;
 }
+
+.active {
+  font-weight :bold;
+}

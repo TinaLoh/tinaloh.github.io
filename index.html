@@ -12,13 +12,14 @@
 
   <script type="text/x-handlebars">
 
-   <div class="navbar">
-     <ul class="nav nav-tabs">
-       <li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
-       <li role="presentation">{{#link-to 'portfolio'}}Portfolio{{/link-to}}</li>
-       <li role="presentation">{{#link-to 'resume'}}Resume{{/link-to}}</li>
-     </ul>
-   </div>
+<div class="navbar">
+<ul class="nav nav-tabs">
+<li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
+<li role="presentation">{{#link-to 'portfolio'}}Portfolio{{/link-to}}</li>
+<li role="presentation">{{#link-to 'resume'}}Résumé{{/link-to}}</li>
+</ul>
+</div>
+
 
    {{outlet}}
  </script>
@@ -26,28 +27,26 @@
  <script type="text/x-handlebars" id="index">
    <h2>Welcome to the Index Home Page</h2>
    <ul>
-   {{#each item in model}}
-     <li>{{item}}</li>
-   {{/each}}
+     <li></li>
    </ul>
  </script>
 
   <script type="text/x-handlebars" id="portfolio">
     <h2>Portfolio</h2>
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
+      <p>Count Dracula is the title character and primary antagonist of Bram Stoker's 1897 Gothic horror novel Dracula. He is considered thus to be both the prototypical and the archetypical vampire in subsequent works of fiction. Some aspects of the character are believed to have been inspired by the 15th-century Romanian general and Wallachian Prince Vlad III the Impaler, who was also known as Dracula. Other character aspects have been added or altered in subsequent popular media fictional works. The character has subsequently appeared frequently in popular culture, from films to animated media to breakfast cereals.</p>
   </script>
 
   <script type="text/x-handlebars" id="resume">
     <h2>Resume</h2>
-    <ul>
-    {{#each item in model}}
-      <li>{{item}}</li>
-    {{/each}}
-    </ul>
+    <div class="row">
+    <div class="col-md-6">
+      <p>Want to get in touch for my resume? Ping me at: </p>
+      <ul>
+        <li>☏ Phone: (408)666-6666</li>
+        <li>✉ Email: <a href="tinalola@gmail.com">tinalola@gmail.com</a>.</li>
+      </ul>
+    </div>
+  </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
