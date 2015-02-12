@@ -5,7 +5,7 @@
   <title>Ember Starter App</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.8.1/semantic.min.css" charset="utf-8">
 
 </head>
 <body>
@@ -17,6 +17,7 @@
 <li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
 <li role="presentation">{{#link-to 'portfolio'}}Portfolio{{/link-to}}</li>
 <li role="presentation">{{#link-to 'resume'}}Résumé{{/link-to}}</li>
+<li role="presentation">{{#link-to 'projects'}}Projects{{/link-to}}</li>
 </ul>
 </div>
 
@@ -25,19 +26,19 @@
  </script>
 
  <script type="text/x-handlebars" id="index">
-   <h2>Welcome to the Index Home Page</h2>
-   <ul>
-     <li></li>
-   </ul>
+   <h2 class="welcome-title">I believe I can fly</h2>
+   <center>
+     <img src="http://clickyooo.com/wp-content/uploads/2014/11/archangel-michael-wallpaper.jpg"/>
+  </center>
  </script>
 
   <script type="text/x-handlebars" id="portfolio">
-    <h2>Portfolio</h2>
-      <p>Count Dracula is the title character and primary antagonist of Bram Stoker's 1897 Gothic horror novel Dracula. He is considered thus to be both the prototypical and the archetypical vampire in subsequent works of fiction. Some aspects of the character are believed to have been inspired by the 15th-century Romanian general and Wallachian Prince Vlad III the Impaler, who was also known as Dracula. Other character aspects have been added or altered in subsequent popular media fictional works. The character has subsequently appeared frequently in popular culture, from films to animated media to breakfast cereals.</p>
+    <center><h2>Portfolio</h2></center>
+      <p>Put Portfolio Content here</p>
   </script>
 
   <script type="text/x-handlebars" id="resume">
-    <h2>Resume</h2>
+    <center><h2>Resume</h2></center>
     <div class="row">
     <div class="col-md-6">
       <p>Want to get in touch for my resume? Ping me at: </p>
@@ -49,11 +50,39 @@
   </div>
   </script>
 
+  <script type="text/x-handlebars" id="projects">
+    <center><h2>Projects</h2></center>
+    <p>List of Projects</p>
+    {{#each project in model}}
+    <li>{{#link-to 'projects.show' project}}{{project.name}}{{/link-to}}</li>
+    {{/each}}
+
+    {{outlet}}
+  </script>
+
+
+
+  <script type="text/x-handlebars" id="projects/show">
+    <center><h2>SHOW PAGE</h2></center>
+    <p>Put Project Show Page Content here</p>
+
+      <h3>Name: {{name}}</h3>
+      <h3>Details: RoR</h3>
+      <img class="logo" {{bind-attr src=image}}>
+
+  </script>
+
+
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/ember-template-compiler-1.10.0.js"></script>
   <script src="js/libs/ember-1.10.0.debug.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.8.1/semantic.min.js" charset="utf-8"></script>
   <script src="js/app.js"></script>
   <script src="js/router.js"></script>
+  <script src="routes/projects.js"></script>
+  <script src="js/models/project.js"></script>
+
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
 </body>

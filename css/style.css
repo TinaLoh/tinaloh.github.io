@@ -7,3 +7,15 @@
 .active {
   font-weight :bold;
 }
+
+.logo {
+  width: 300px;
+}
+
+.welcome-title {
+  text-align: center;
+}
+
+.welcome-image {
+  text-align: center;
+}

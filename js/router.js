@@ -1,11 +1,8 @@
 App.Router.map(function() {
   // put your routes here
-  this.resource('portfolio');
-  this.resource('resume');
+  this.route('portfolio');
+  this.route('resume');
+  this.resource('projects', function() {
+    this.route('show', {path: '/:project_id'});
+  });
 });
-
-// App.IndexRoute = Ember.Route.extend({
-//   model: function() {
-//     return ['red', 'yellow', 'blue'];
-//   }
-// });
